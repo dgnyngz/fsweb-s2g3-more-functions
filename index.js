@@ -16,10 +16,14 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
+function dosyaAdiniBul(path) {
+  const bolunmusArr = path.split('/').pop()
+  if(path == "")
+   return ""
+   else
+   return bolunmusArr
 }
-
+console.log(dosyaAdiniBul(""))
 /*
   GÖREV 2
   - Input:  Bir sayı arrayini parametre olarak alacak bir fonksiyon oluştur.
@@ -38,10 +42,14 @@ function dosyaAdiniBul(/* kodlar buraya */) {
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamaBul(sayiDizisi) {
+	if (sayiDizisi.length === 0) {
+		return null;
+	} else {
+		return sayiDizisi.reduce((total, current) => total + current, 0) / sayiDizisi.length;
+	}
 }
-
+console.log(ortalamaBul([2,3,4,12,4,23,412,31]))
 /*
   GÖREV 3
   - Input:  Bir sayı arrayini ve ortalama bulmaya yarayacak bir fonksiyonu parametre olarak alacak bir fonksiyon oluştur.
@@ -62,11 +70,15 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
-}
-
-/* !!!! Burdan aşağısını değiştirmeyin !!!! */
+function ortalamadanBuyukleriBul(sayiDizisi,sayilar) {
+  if (sayiDizisi.length === 0) {
+		return null;
+  }else if (sayiDizisi.length === 1 ){
+    return sayiDizisi
+	} else {
+		const ortalama = sayiDizisi.reduce((total, current) => total + current, 0) / sayiDizisi.length;
+    return sayiDizisi.filter((sayi)=> sayi > ortalama)
+  }}
 function as() {
   console.log("Kodlar sorunsuz çalışıyor!");
   return "sa";
